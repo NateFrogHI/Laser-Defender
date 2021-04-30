@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3187013113561653338}
   - component: {fileID: 4148286739147151717}
   - component: {fileID: -3979732590045153730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
   laserPrefab: {fileID: 798023974345765050, guid: 2cc2fba66d342a04dbc1441da567fc28,
     type: 3}
   projectileSpeed: 20
-  projectileFiringPeriod: 0.05
+  projectileFiringPeriod: 0.1
 --- !u!50 &4148286739147151717
 Rigidbody2D:
   serializedVersion: 4

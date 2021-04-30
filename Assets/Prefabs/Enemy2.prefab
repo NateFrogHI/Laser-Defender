@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5664401238702768900}
   - component: {fileID: -8526752117521970046}
   - component: {fileID: 435385577932398344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   health: 100
   shotCounter: 0
   minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
+  maxTimeBetweenShots: 2
   projectile: {fileID: 4773966441610090029, guid: 186944bde492c3b4c8e1686a2e15b3d6,
     type: 3}
   projectileSpeed: 10
