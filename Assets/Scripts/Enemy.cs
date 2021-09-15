@@ -10,8 +10,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float durationOfExplosion = 1f;
+    [SerializeField] [Range(0, 1)] float deathSoundVolume = 1f;
+    [SerializeField] [Range(0, 1)] float laserSoundVolume = 1f;
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject deathVFX;
+    [SerializeField] AudioClip deathSFX;
+    [SerializeField] AudioClip laserSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +41,7 @@ public class Enemy : MonoBehaviour
 
     private void Fire()
     {
+        AudioSource.PlayClipAtPoint(laserSFX, Camera.main.transform.position, laserSoundVolume);
         GameObject laser = Instantiate
         (
             projectile,
@@ -65,7 +70,9 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
-        Destroy(gameObject, durationOfExplosion);
+        Destroy(explosion, durationOfExplosion);
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
     }
 }

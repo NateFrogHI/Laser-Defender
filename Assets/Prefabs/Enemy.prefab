@@ -113,11 +113,15 @@ MonoBehaviour:
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 2
   projectileSpeed: 10
-  durationOfExplosion: 0.1
+  durationOfExplosion: 1
+  deathSoundVolume: 1
+  laserSoundVolume: 0.4
   projectile: {fileID: 4773966441610090029, guid: 186944bde492c3b4c8e1686a2e15b3d6,
     type: 3}
   deathVFX: {fileID: 3403729219335488757, guid: 5f80f589d69a9d54fabf7f2418059296,
     type: 3}
+  deathSFX: {fileID: 8300000, guid: bf6f2ec22938e2a4b82af12f36e02ffd, type: 3}
+  laserSFX: {fileID: 8300000, guid: f55653e07d3d53b4d85eb5e09470816e, type: 3}
 --- !u!58 &3697534325393314076
 CircleCollider2D:
   m_ObjectHideFlags: 0
