@@ -10,17 +10,17 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
     [SerializeField] int health = 200;
-    [SerializeField] float durationOfExplosion = 1f;
-    [SerializeField] [Range(0, 1)] float deathSoundVolume = 1f;
     [SerializeField] GameObject deathVFX;
+    [SerializeField] float durationOfExplosion = 2;
     [SerializeField] AudioClip deathSFX;
+    [SerializeField] [Range(0, 1)] float deathSoundVolume = 1f;
 
     [Header("Projectile")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.05f;
-    [SerializeField] [Range(0, 1)] float laserSoundVolume = 1f;
     [SerializeField] AudioClip laserSFX;
+    [SerializeField] [Range(0, 1)] float laserSoundVolume = 1f;
 
     Coroutine firingCoroutine;
 
@@ -61,10 +61,11 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        FindObjectOfType<Level>().LoadGameOver();
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(explosion, durationOfExplosion);
-        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
+        Destroy(gameObject);
     }
 
     private void Fire()
