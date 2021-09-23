@@ -115,6 +115,7 @@ MonoBehaviour:
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 2
   projectileSpeed: 10
+  pointValue: 100
   durationOfExplosion: 1
   deathSoundVolume: 1
   laserSoundVolume: 0.4

@@ -30,6 +30,8 @@ public class Level : MonoBehaviour
     }
 
     public void LoadStartMenu() {
+        GameSession gameSession = FindObjectOfType<GameSession>();
+        gameSession.ResetGame();
         SceneManager.LoadScene((int) Scene.Start);
     }
 
