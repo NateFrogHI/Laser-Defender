@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
     private void ProcessHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
+        health = (health >= 0) ? health : 0;
         damageDealer.Hit();
         if (health <= 0)
         {
@@ -113,5 +114,10 @@ public class Player : MonoBehaviour
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }
