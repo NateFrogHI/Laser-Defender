@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    float shotCounter;
+
     [Header("Enemy Stats")]
     [SerializeField] float health = 100;
     [SerializeField] int pointValue = 50;
 
     [Header("Shooting")]
     [SerializeField] GameObject projectile;
-    [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] float projectileSpeed = 10f;
